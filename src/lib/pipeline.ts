@@ -8,10 +8,7 @@ export class AwsInfrastructurePipeline extends CdkGithubPipeline {
     constructor(app: App, pipelineStack: Stack, id: string, props?: StackProps) {
         super(app, pipelineStack, id, {
             ...props,
-            installCommands: [
-                // hugo theme npm requirements, typescript for compiling cdk and well, the cdk
-                'npm install -g aws-cdk typescript',
-                'apt-get update'],
+            installCommands: [],
             buildCommands: ['npm install'],
             projectName: Util.getProjectName(),
             githubProjectOwner: Util.getGithubProjectOwner(),
