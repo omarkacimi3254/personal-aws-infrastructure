@@ -6,7 +6,7 @@ import {CdkGithubPipeline} from "aws-cdk-github-pipeline";
 
 export class AwsInfrastructurePipeline extends CdkGithubPipeline {
     constructor(app: App, pipelineStack: Stack, id: string, props?: StackProps) {
-        super(app, pipelineStack, id + "-pipeline", {
+        super(app, pipelineStack, id, {
             ...props,
             installCommands: [
                 // hugo theme npm requirements, typescript for compiling cdk and well, the cdk
@@ -27,6 +27,6 @@ export class AwsInfrastructurePipeline extends CdkGithubPipeline {
         account: string,
         region: string
     }) {
-        return new AwsInfrastructureStage(stageEnvironment.pipelineStack, Util.getProjectName() + '-site-live-stage', stageEnvironment)
+        return new AwsInfrastructureStage(stageEnvironment.pipelineStack, 'live-stage', stageEnvironment)
     }
 }

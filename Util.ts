@@ -1,5 +1,5 @@
 export class Util {
-    private static readonly projectName = 'aws-infrastructure';
+    private static readonly projectName = 'personal-aws-infrastructure';
     private static readonly alarmingEmail = 'omar.kacimi.aws.live@gmail.com';
     private static readonly stages = {
         "live": {
