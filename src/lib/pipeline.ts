@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {App, Stack, StackProps} from "@aws-cdk/core/lib";
 import {AwsInfrastructureStage} from "./aws-infrastructure-stage";
-import {Util} from "../../Util";
+import {Util} from "./Util";
 import {CdkGithubPipeline} from "aws-cdk-github-pipeline";
 
 export class AwsInfrastructurePipeline extends CdkGithubPipeline {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {Construct, Duration, Stack} from '@aws-cdk/core';
 import {StackProps} from "@aws-cdk/core/lib/stack";
-import {Util} from "../../Util";
+import {Util} from "./Util";
 import {ComparisonOperator, Metric} from "@aws-cdk/aws-cloudwatch";
 import {Topic} from "@aws-cdk/aws-sns";
 import {EmailSubscription} from "@aws-cdk/aws-sns-subscriptions";

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {Util} from "../Util";
+import {Util} from "./lib/Util";
 import {App} from "@aws-cdk/core";
 import {AwsInfrastructureStack} from "./lib/pipeline-stack";
 
