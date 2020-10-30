@@ -1,0 +1,40 @@
+{
+  "name": "aws-infrastructure",
+  "version": "1.0.0",
+  "description": "AWS Account wide Infrastructure stuff e.g. alarms and what not",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "author": {
+    "name": "KacAmo",
+    "url": "https://omar-kacimi-cv.com",
+    "organization": true
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^10.17.42",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-certificatemanager": "^1.71.0",
+    "@aws-cdk/aws-cloudfront": "^1.71.0",
+    "@aws-cdk/aws-cloudwatch": "^1.71.0",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.71.0",
+    "@aws-cdk/aws-codepipeline": "^1.71.0",
+    "@aws-cdk/aws-codepipeline-actions": "^1.71.0",
+    "@aws-cdk/aws-iam": "^1.71.0",
+    "@aws-cdk/aws-route53": "^1.71.0",
+    "@aws-cdk/aws-route53-targets": "^1.71.0",
+    "@aws-cdk/aws-s3": "^1.71.0",
+    "@aws-cdk/aws-s3-deployment": "^1.71.0",
+    "@aws-cdk/aws-sns": "^1.71.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.71.0",
+    "@aws-cdk/core": "^1.71.0",
+    "@aws-cdk/pipelines": "^1.71.0",
+    "aws-cdk": "^1.71.0",
+    "aws-cdk-github-pipeline": "0.1.7",
+    "ts-node": "^9.0.0"
+  }
+}
