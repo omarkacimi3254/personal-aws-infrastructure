@@ -4,6 +4,7 @@ import {StackProps} from "@aws-cdk/core/lib/stack";
 import {Util} from "../../Util";
 import {ComparisonOperator, Metric} from "@aws-cdk/aws-cloudwatch";
 import {Topic} from "@aws-cdk/aws-sns";
+import {EmailSubscription} from "@aws-cdk/aws-sns-subscriptions";
 
 export interface AwsInfrastructureProps extends StackProps {
     account: string | undefined,
@@ -39,6 +40,6 @@ export class AwsInfrastructure extends Stack {
 
         new Topic(this, `BillingAlert${amount}DollarsTopic`, {
             topicName: `Billing-Alert-${amount}Dollars`,
-        });
+        }).addSubscription(new EmailSubscription(Util.getAlarmingEmail()));
     }
 }
