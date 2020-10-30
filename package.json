@@ -34,7 +34,7 @@
     "@aws-cdk/core": "^1.71.0",
     "@aws-cdk/pipelines": "^1.71.0",
     "aws-cdk": "^1.71.0",
-    "aws-cdk-github-pipeline": "0.1.9",
+    "aws-cdk-github-pipeline": "0.1.10",
     "ts-node": "^9.0.0"
   }
 }
