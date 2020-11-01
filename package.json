@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "test": "echo \"nothing to do here\" && exit 0"
   },
   "author": {
     "name": "KacAmo",
@@ -34,7 +35,7 @@
     "@aws-cdk/core": "^1.71.0",
     "@aws-cdk/pipelines": "^1.71.0",
     "aws-cdk": "^1.71.0",
-    "aws-cdk-github-pipeline": "0.1.11",
+    "aws-cdk-github-pipeline": "0.1.13",
     "ts-node": "^9.0.0"
   }
 }

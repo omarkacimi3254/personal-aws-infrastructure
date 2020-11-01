@@ -1,12 +1,13 @@
 export class Util {
     private static readonly projectName = 'personal-aws-infrastructure';
     private static readonly alarmingEmail = 'omar.kacimi.aws.live@gmail.com';
-    private static readonly stages = {
-        "live": {
+    private static readonly stages = [
+        {
+            name: "live",
             account: '813301723154',
             region: 'eu-central-1'
         }
-    };
+    ];
 
     private static readonly GITHUB_PROJECT_OWNER = 'KacAmo';
 
@@ -23,11 +24,7 @@ export class Util {
     }
 
     public static getStages() {
-        return this.stages.live
-    }
-
-    public static getLiveStage() {
-        return this.stages.live
+        return this.stages
     }
 
     public static getApplicationTags() {

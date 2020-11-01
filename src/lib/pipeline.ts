@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import {App, Stack, StackProps} from "@aws-cdk/core/lib";
-import {AwsInfrastructureStage} from "./aws-infrastructure-stage";
+import {App, Stack, StackProps, Stage} from "@aws-cdk/core/lib";
 import {Util} from "./Util";
+import {AwsInfrastructure} from "./aws-infrastructure";
 import {CdkGithubPipeline} from "aws-cdk-github-pipeline";
 
 export class AwsInfrastructurePipeline extends CdkGithubPipeline {
@@ -12,18 +12,15 @@ export class AwsInfrastructurePipeline extends CdkGithubPipeline {
             buildCommands: ['npm install'],
             projectName: Util.getProjectName(),
             githubProjectOwner: Util.getGithubProjectOwner(),
-            stages: [{
-                account: Util.getLiveStage().account,
-                region: Util.getLiveStage().region
-            }]
+            stages: Util.getStages()
         })
     }
 
-    protected createStage(stageEnvironment: {
-        pipelineStack: Stack,
-        account: string,
-        region: string
-    }) {
-        return new AwsInfrastructureStage(stageEnvironment.pipelineStack, 'live-stage', stageEnvironment)
+    protected createStacks(stageEnvironment: { stageScope: Stage; account: string; region: string }): Stack[] {
+        return [ new AwsInfrastructure(stageEnvironment.stageScope, "infrastructure-stack-" + stageEnvironment.stageScope.stageName, {
+            account: stageEnvironment.account,
+            region: stageEnvironment.region
+        }) ];
     }
+
 }

@@ -7,6 +7,4 @@ export class AwsInfrastructureStack extends Stack {
         super(scope, id, props)
         new AwsInfrastructurePipeline(scope, this, id + "-pipeline", props)
     }
-
-
 }
