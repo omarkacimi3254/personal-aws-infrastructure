@@ -17,7 +17,7 @@ export class AwsInfrastructurePipeline extends CdkGithubPipeline {
     }
 
     protected createStacks(stageEnvironment: { stageScope: Stage; account: string; region: string }): Stack[] {
-        return [ new AwsInfrastructure(stageEnvironment.stageScope, "infrastructure-stack-", {
+        return [ new AwsInfrastructure(stageEnvironment.stageScope, Util.getProjectName()+"-stack", {
             account: stageEnvironment.account,
             region: stageEnvironment.region
         }) ];
