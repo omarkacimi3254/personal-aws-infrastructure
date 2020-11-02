@@ -1,2 +1,6 @@
 # boostrapping
-CDK_NEW_BOOTSTRAP=1 AWS_PROFILE=personal-live cdk bootstrap --trust 813301723154  --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess aws://813301723154/eu-central-1
+CDK_NEW_BOOTSTRAP=1 AWS_PROFILE=personal-live cdk bootstrap --trust ${pipelineAccount}  --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess aws://${targetAccount}/eu-central-1
+
+# deploying
+npm install
+AWS_PROFILE=${yourProfile} npx cdk deploy
